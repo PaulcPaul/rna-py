@@ -204,15 +204,16 @@ class RNA:
 
 if __name__ == '__main__':
     raw, dados = carregar_dados()
-    plotar_iris(raw)
+    #plotar_iris(raw) # plota o dataset iris
     
-    train_x, train_y, test_x, test_y = preparar_iris(dados, 70)
+    train_x, train_y, test_x, test_y = preparar_iris(dados, 60)
     rna = RNA()
-    rna.add_layer(4, 3)
-    rna.add_layer(3, 5)
-    rna.add_layer(5, 3)
+    rna.add_layer(4, 32)
+    rna.add_layer(32, 64)
+    rna.add_layer(64, 64)
+    rna.add_layer(64, 3)
     
-    rna.train(train_x, train_y, 0.001, 20000)
+    rna.train(train_x, train_y, 0.001, 1000)
     
     rna.resumo()
     rna.confusion_matrix(train_y)

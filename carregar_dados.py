@@ -1,4 +1,4 @@
-## Função para carregar o dataset
+## Algoritmo para carregar o dataset iris
 import pandas as pd
 import seaborn as sns
 
