@@ -22,7 +22,7 @@ model.compile(optimizer='rmsprop',
               loss='categorical_crossentropy',
               metrics=['accuracy'])
 
-model.fit(train_x, train_y, epochs=15)
+model.fit(train_x, train_y, epochs=20)
 score = model.evaluate(test_x, test_y)
 
-print(score)
+print("Erro teste: {}\nPrecisão: {}".format(score[0], score[1]))
