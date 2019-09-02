@@ -5,4 +5,4 @@ Rede neural simples de múltiplas camadas para fins acadêmicos. Exemplo com o d
 
 Disclaimer: Não é para ser utilizado em produção, ou em qualquer aplicação séria.
 
-NBviewer: https://nbviewer.jupyter.org/github/PaulcPaul/rna-py/blob/master/rna.ipynb
+NBviewer: https://nbviewer.jupyter.org/github/PaulcPaul/rna-py/blob/master/rna.ipynb?flush_cache=true
