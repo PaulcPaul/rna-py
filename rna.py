@@ -1,8 +1,10 @@
 from numpy import exp, random, dot, array_equal, round_
-from carregar_dados import carregar_dados, preparar_iris, plotar_iris
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
+from tqdm import tqdm
+
+from carregar_dados import carregar_dados, preparar_iris, plotar_iris
 
 sns.set_style("darkgrid")
 
@@ -133,7 +135,11 @@ class RNA:
         learning_rate: A taxa de aprendizado da rede.
         iterations:    Número de iterações. Uma iteração ocorre após um feedforward e um backprop.
         """
-        for iteration in range(iterations):
+        
+        print("Treinando...")
+        
+        for iteration in tqdm(range(iterations), ncols=100):
+            # tqdm para mostrar o progresso
             
             self.feedforward(training_x)
             
@@ -171,7 +177,7 @@ class RNA:
         accuracy = self.__calc_accuracy(set_x, set_y, predictions)
         error = abs(set_y - res).mean()
         
-        print("Prec. Teste: {}\nErro Teste: {}".format(accuracy, error))
+        print("Precisão teste: {}\nErro Teste: {}".format(accuracy, error))
     
     def resumo(self):
         """
